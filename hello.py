@@ -42,4 +42,3 @@ def sobre():
         "nome": "OpsTrack API",
         "versao": "1.0.0"
     }
-    
