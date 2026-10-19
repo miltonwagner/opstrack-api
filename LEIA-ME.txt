@@ -1,0 +1,25 @@
+Kit da Aula 06 - Testes automatizados (ISW-032)
+
+Conteudo:
+  pytest.ini          -> copiar para a RAIZ do projeto (mesma pasta do app.py)
+  tests/conftest.py   -> copiar a pasta tests/ inteira para a raiz do projeto
+  tests/test_api.py
+
+Estrutura final esperada:
+  opstrack-api/
+    app.py
+    pytest.ini
+    tests/
+      conftest.py
+      test_api.py
+
+Depois de copiar, com o ambiente virtual ativo, rode: pytest
+Resultado esperado agora: 2 failed, 3 passed (dois testes estao incompletos de proposito).
+Complete os trechos marcados com COMPLETE AQUI (veja o Caderno do Aluno e os slides).
+
+Antes de escrever o teste do /version, descubra o que o SEU app devolve:
+  python -c "from app import app; print(app.test_client().get('/version').get_json())"
+Use no assert exatamente a chave e o valor que aparecer.
+
+No Windows: se o pytest.ini aparecer como pytest.ini.txt, renomeie (ou crie o arquivo pelo VS Code).
+Ajuste os testes ao SEU app.py se as rotas ou os dados forem diferentes.
