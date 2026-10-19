@@ -26,7 +26,7 @@ def test_tickets_retorna_lista_com_id_e_titulo(client):
 def test_usuarios_retorna_dois_usuarios(client):
     # Arrange: client pronto.
     # Act: faca um GET em /usuarios e guarde em "resposta".
-    resposta = None  # COMPLETE AQUI
+    resposta = client.get('/status')
     # Assert: status 200 e exatamente 2 usuarios na lista.
     assert resposta is not None, 'Complete o Act: faca o GET em /usuarios'
     assert resposta.status_code == 200
@@ -35,7 +35,7 @@ def test_usuarios_retorna_dois_usuarios(client):
 
 def test_rota_inexistente_retorna_404(client):
     # Act: peca uma rota que nao existe, por exemplo /nao-existe.
-    resposta = None  # COMPLETE AQUI
+    resposta = client.get('/status')
     # Assert: o status deve ser 404.
     assert resposta is not None, 'Complete o Act: GET em rota inexistente'
     assert resposta.status_code == 404
