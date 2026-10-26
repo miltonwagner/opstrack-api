@@ -10,7 +10,7 @@ def status():
 
 @app.route('/status')
 def health_check():
-    return {'status': 'ok'}
+    return {'status': 'oks'}
 
 
 @app.route('/version')
