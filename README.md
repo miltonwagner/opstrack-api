@@ -1,4 +1,4 @@
-![CI](https://github.com/linconperetto/aula-teste/actions/workflows/ci.yml/badge.svg)
+![CI Pipeline](https://github.com/miltonwagner/opstrack-api/actions/workflows/ci.yml/badge.svg)
 # OpsTrack API
 
 API simples de controle de chamados (tickets) de TI, desenvolvida como projeto contínuo da disciplina **Integração e Entrega Contínua (ISW-032)** — Fatec Indaiatuba, curso de Desenvolvimento de Software Multiplataforma.
