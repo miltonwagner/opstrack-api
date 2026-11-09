@@ -22,10 +22,24 @@ jobs:
           cache-dependency-path: requirements*.txt
 
       - name: Instalar dependencias
-        run: pip install -r requirements.txt
+        run: pip install -r requirements-dev.txt
 
       - name: Lint (flake8)
         run: flake8 . --count
 
       - name: Testes e cobertura (pytest)
         run: pytest --cov=app --cov-report=term-missing --cov-fail-under=85
+  docker:
+    name: docker
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o codigo
+        uses: actions/checkout@v4
+      - name: Construir a imagem
+        run: docker build -t opstrack-api:ci .
+      - name: Subir o container e testar o /status
+        run: |
+          docker run -d --name api -p 8000:8000 opstrack-api:ci
+          sleep 5
+          curl --fail http://localhost:8000/status
